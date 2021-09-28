@@ -1,6 +1,7 @@
 package com.bridgelab;
 
-public class Person {
+	public class Person {
+	    //variables
 	    private String firstName;
 	    private String lastName;
 	    private String address;
@@ -90,5 +91,6 @@ public class Person {
 	                ", zip=" + zip +
 	                '}';
 	    }
+	}
 
-}
+
