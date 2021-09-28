@@ -1,5 +1,4 @@
 package com.bridgelab;
-
 	public class Person {
 	    //variables
 	    private String firstName;
@@ -93,4 +92,4 @@ package com.bridgelab;
 	    }
 	}
 
-
+}
