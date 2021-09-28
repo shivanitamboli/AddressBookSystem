@@ -1,15 +1,39 @@
 package com.bridgelab;
 
-public class AddressBookSystem {
-	public static void main(String[] args) {
-        System.out.println("Welcome to Address Book ");
-        Person person = new Person("Shivani" ,"tamboli", "Pune,Maharashtra", "pune", "Maharashtra", 9999999999L, "411057");
-        System.out.println("Firstname:"+ person.getFirstName());
-        System.out.println("Lastname:"+ person.getLastName());
-        System.out.println("Address:"+ person.getAddress());
-        System.out.println("City:"+ person.getCity());
-        System.out.println("State:"+ person.getState());
-        System.out.println("Phone number:"+ person.getPhoneNumber());
-        System.out.println("Zip:"+ person.getZip());
-    }
-}
+	import java.util.ArrayList;
+	import java.util.Scanner;
+
+	public class AddressBookSystem implements Info {
+	    //ArrayList Declarer
+	    ArrayList<Person> book = new ArrayList<>();
+	    //Creating scanner class object
+	    Scanner scan = new Scanner(System.in);
+
+	    public void add() {
+	        //user input to print the details
+	        System.out.println("Enter the  Firstname: ");
+	        String firstName = scan.nextLine();
+	        System.out.println("Enter the  Lastname: ");
+	        String lastName = scan.nextLine();
+	        System.out.println("Enter the  Address: ");
+	        String address = scan.nextLine();
+	        System.out.println("Enter the  City: ");
+	        String city = scan.nextLine();
+	        System.out.println("Enter the  State: ");
+	        String state = scan.nextLine();
+	        System.out.println("Enter the Phone Number: ");
+	        long phoneNumber = scan.nextLong();
+	        System.out.println("Enter the Zip code: ");
+	        scan.nextLine();
+	        String zip = scan.nextLine();
+	        Person person = new Person(firstName, lastName, address, city, state, phoneNumber, zip);
+	        book.add(person);
+	        System.out.println("Successfully Add ...");
+	    }
+
+	    //Display the person details added
+	    public void display() {
+	        for (Person person : book)
+	            System.out.println(person);
+	    }
+	}
