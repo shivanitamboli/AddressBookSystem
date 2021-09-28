@@ -1,5 +1,4 @@
 package com.bridgelab;
-
 	import java.util.ArrayList;
 	import java.util.Scanner;
 
@@ -11,24 +10,36 @@ package com.bridgelab;
 
 	    public void add() {
 	        //user input to print the details
-	        System.out.println("Enter the  Firstname: ");
+	        System.out.println("Enter the AddressBook Name");
+	        scan.nextLine();
+	        System.out.println("Enter the Person Firstname: ");
 	        String firstName = scan.nextLine();
-	        System.out.println("Enter the  Lastname: ");
+	        System.out.println("Enter the Person Lastname: ");
 	        String lastName = scan.nextLine();
+
+	        for( int search = 0; search < book.size(); search++ ) {
+	            if(book.get(search).getFirstName().equalsIgnoreCase(firstName)) {
+	                if(book.get(search).getLastName().equalsIgnoreCase(lastName)) {
+	                    System.out.println("Name is already exist please update/edit your details with option 2");
+	                    return;
+	                }
+
+	            }
+	        }
 	        System.out.println("Enter the  Address: ");
 	        String address = scan.nextLine();
 	        System.out.println("Enter the  City: ");
 	        String city = scan.nextLine();
 	        System.out.println("Enter the  State: ");
 	        String state = scan.nextLine();
-	        System.out.println("Enter the Phone Number: ");
+	        System.out.println("Enter the  Phone Number: ");
 	        long phoneNumber = scan.nextLong();
 	        System.out.println("Enter the Zip code: ");
 	        scan.nextLine();
 	        String zip = scan.nextLine();
-	        Person person = new Person(firstName, lastName, address, city, state, phoneNumber, zip);
+	        Person person = new Person(firstName,lastName,address,city,state,phoneNumber,zip);
 	        book.add(person);
-	        System.out.println("Successfully Add ...");
+	        System.out.println("Successfully Added....");
 	    }
 	    /*Method to edit or update the details using firstname*/
 	    public void edit(String firstName) {
