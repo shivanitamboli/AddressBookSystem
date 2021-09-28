@@ -13,13 +13,18 @@ package com.bridgelab;
 	         */
 	        while (status) {
 	            System.out.println("Enter your option : \n Press 1 to Add new person" +
-	                    " \n Press 2 to Display details \n Press 9 to Quit");
+	                    " \n Press 2 to Edit details \n Press 3 to Display details \n Press 9 to Quit");
 	            int choice = scan.nextInt();
 	            switch (choice) {
 	                case 1:
 	                    addressBookSystem.add();
 	                    break;
-	                case 2:
+	                case 2 :
+	                    System.out.println("Enter your firstname to edit your details");
+	                    String firstName = scan.next();
+	                    addressBookSystem.edit(firstName);
+	                    break;
+	                case 3 :
 	                    addressBookSystem.display();
 	                    break;
 	                default:
@@ -34,6 +39,5 @@ package com.bridgelab;
 	        main.options();
 
 	    }
-	}
 
-
+}
